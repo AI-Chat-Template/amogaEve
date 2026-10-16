@@ -8,6 +8,9 @@ This guide covers the database-free starter, local development, the production p
 - pnpm through Corepack
 - A Vercel account
 - Vercel CLI, either installed globally or run with `pnpm dlx`
+- An OpenRouter API key for model requests
+
+The agent sends model requests directly to OpenRouter. Set `OPENROUTER_API_KEY` in `.env.local` for local development and in the Vercel project for deployed environments. Create a key at [OpenRouter](https://openrouter.ai/settings/keys).
 
 ```bash
 corepack enable
@@ -22,6 +25,7 @@ The commands below use `vercel`. If you do not have a global install, replace `v
 The README deploy button creates a working starter without Marketplace products or migrations. It asks for:
 
 ```bash
+OPENROUTER_API_KEY=
 EVE_CHAT_PASSWORD=
 ```
 

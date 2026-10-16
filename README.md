@@ -11,7 +11,7 @@ A Next.js chat template for [eve](https://eve.dev) that starts with password acc
 Deploy the starter without provisioning a database or other Marketplace products:
 
 1. Open the maintained template from [vercel/eve-examples](https://github.com/vercel/eve-examples).
-2. Enter a strong `EVE_CHAT_PASSWORD` (16+ characters recommended).
+2. Set `OPENROUTER_API_KEY` and a strong `EVE_CHAT_PASSWORD` (16+ characters recommended).
 3. Open the deployed app and enter that password.
 
 Chats and eve session cursors are stored in that browser. They are not shared across browsers or users.
@@ -38,7 +38,15 @@ Install dependencies with pnpm:
 pnpm install
 ```
 
-Run locally without additional services:
+Set an OpenRouter API key in `.env.local` before running locally:
+
+```bash
+OPENROUTER_API_KEY=<your-openrouter-api-key>
+```
+
+Create a key at [OpenRouter](https://openrouter.ai/settings/keys). Keep it private and add it to the Vercel project environment for deployed chat.
+
+Run locally:
 
 ```bash
 pnpm dev
@@ -60,6 +68,7 @@ To upgrade the linked project to production mode, run the setup script. It provi
 Production mode requires:
 
 ```bash
+OPENROUTER_API_KEY=
 DATABASE_URL=
 BETTER_AUTH_SECRET=
 NEXT_PUBLIC_VERCEL_APP_CLIENT_ID=
